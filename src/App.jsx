@@ -30,6 +30,10 @@ function App() {
      </Routes>
      </div>
      <Toaster />  <Toaster/>
+     <footer className="bg-base-100 border-t border-base-300 mt-auto text-center py-4">
+        <p className="text-sm md:text-base">© Deepank Singh 2025 | <a href="mailto:deepanksingh01@gmail.com"  className="text-primary hover:underline">deepanksingh01@gmail.com</a> | <a href="https://www.linkedin.com/in/deepanksingh/" target="_blank" className="text-primary hover:underline">Contact Developer</a> | <a href="https://deepank-protfolio.vercel.app/"  target="_blank" className="text-primary hover:underline">Portfolio</a></p>
+      </footer>
+
      </div>
     </>
   )
