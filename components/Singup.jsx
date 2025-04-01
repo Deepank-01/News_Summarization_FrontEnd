@@ -38,7 +38,7 @@ const Singup = () => {
     if (success === true){
       console.log(formData)
            signin(formData)
-           navigate("/")
+           navigate("/news")
     } 
     else{
       toast.error("Error in the form validtion")

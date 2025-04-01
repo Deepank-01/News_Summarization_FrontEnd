@@ -73,7 +73,14 @@ const Summarize = () => {
                             transition={{ duration: 0.8, ease: "easeInOut" }}
                         >
                       <h1 className='text-xl md:text-3xl font-extrabold md:p-4 p-2 tracking-wide leading-relaxed border-b-2 border-b-amber-900 pb-2'>
-                           {decodeURIComponent(heading)}
+                      {(() => {
+        try {
+            return decodeURIComponent(heading);
+        } catch (error) {
+            console.error("Decoding error:", error);
+            return heading; // Return raw value if decoding fails
+        }
+    })()}
                        </h1>
 
 

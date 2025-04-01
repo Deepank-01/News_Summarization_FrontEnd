@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     login(formData);
     setTimeout(() => {
-      navigate("/");
+      navigate("/news");
     }, 2000);  
   };
 
