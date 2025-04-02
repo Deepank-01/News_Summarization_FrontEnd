@@ -1,12 +1,16 @@
 import { create } from "zustand";
 import axiosInstance from "../axios/axiosInstance";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router";
+
+
 export const useAuth=create((set,get)=>({
 //  local storage  token , auth-user :user info backend and loaclstoarge store 
 authUser:localStorage.getItem("User") ? (JSON.parse(localStorage.getItem("User"))): (null),
 Token:localStorage.getItem("Token")? (localStorage.getItem("Token")) : null,
 isLoggingIn:false,
 isSigningUp:false,
+
 // functions
 signin:async(data)=>{
    try{
@@ -63,6 +67,7 @@ logout: ()=>{
     localStorage.setItem("Token",null)
     set({authUser:null})
     set({Token:null})
+    
 
 }
 

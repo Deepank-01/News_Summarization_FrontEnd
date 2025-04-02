@@ -46,7 +46,9 @@ const Navbar = () => {
               <Link to="/Profile" onClick={() => setMobileMenuOpen(false)} className={`btn ${isActive("/Profile") ? "bg-slate-700 text-primary" : ""}`}>Profile</Link>
               <button className="btn glass" onClick={() => { logout(); setMobileMenuOpen(false); navigate("/login") }}>
                 <LogOut className="size-5" />
-                <span className="hidden sm:inline">Logout</span>
+                <span className="hidden sm:inline"
+                 onClick={()=>navigate("/")}
+                >Logout</span>
               </button>
             </div>
           )}
