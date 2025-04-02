@@ -8,7 +8,7 @@ export const useSummarize=create((set,get)=>({
     f_summarize:async(data)=>{
        try{
         set({isSummarize:true})
-        const res=await axiosInstance.post("Note/summarize",data)
+        const res=await axiosInstance.post("/api/Note/summarize",data)
         if(res?.data?.success==false) {
             toast.error(res?.data?.message)
             set({isSigningUp:false})

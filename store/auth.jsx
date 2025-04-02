@@ -12,7 +12,7 @@ signin:async(data)=>{
    try{
     // axios call 
     set({isSigningUp:true})
-    const res=await axiosInstance.post("/auth/Signup",data)
+    const res=await axiosInstance.post("/api/auth/Signup",data)
     console.log("The resposne from the backedn is ", res)
     if(res?.data?.success==false) {
         toast.error(res?.data?.message)
@@ -38,7 +38,7 @@ try {
  
     //
     set({isLoggingIn:true})
-    const res=await axiosInstance.post("/auth/login",data)
+    const res=await axiosInstance.post("/api/auth/login",data)
     console.log("The resposne from the backedn is ", res)
     if(res?.data?.success==false) {
         toast.error(res?.data?.message)
