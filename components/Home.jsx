@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router';
+import axiosInstance from '../axios/axiosInstance';
 
 const Home = () => {
   const Api_key = import.meta.env.VITE_API_NEWS;
@@ -26,9 +27,13 @@ const Home = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(
-          `https://gnews.io/api/v4/top-headlines?category=${cat}&country=in&apikey=${Api_key}`
-        );
+        // const res = await axios.get(
+        //   `https://gnews.io/api/v4/top-headlines?category=${cat}&country=in&apikey=${Api_key}`
+        // );
+          const api_data = {
+                type: cat
+            };
+        const res=await axiosInstance.post("/api/Note/news_data",api_data)
         setdata(res?.data?.articles || []);
         console.log(res?.data?.articles)
       } catch (error) {
